@@ -1,0 +1,140 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(238, 41, 74, 0.7), rgba(158, 23, 79, 0.7)); /* Soft pink blend */
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Image with Improved Visibility */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image1.jpg') center/cover no-repeat;
+    opacity: 0.3; /* Slightly more visible */
+    z-index: -1;
+    filter: blur(3px); /* Less blur for clarity */
+    animation: fadeInBg 4s ease-in-out;
+}
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 0.3; }
+}
+
+/* Centering Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures centering */
+    width: 100%;
+}
+
+/* Mystery Box */
+.mystery-box {
+    background: linear-gradient(145deg, #ffcc00, #ffdd44);
+    padding: 20px 50px;
+    border-radius: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.mystery-box:hover {
+    transform: scale(1.2);
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.7);
+}
+
+/* Hidden Content */
+.hidden-content {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Love Text */
+.love-text {
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 4px 4px 30px rgba(255, 255, 255, 0.9);
+    animation: fadeInText 3s ease-in-out, glowText 2s infinite alternate;
+}
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowText {
+    from { text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); }
+    to { text-shadow: 0px 0px 20px rgba(255, 255, 255, 1); }
+}
+
+/* Love Letter */
+.love-letter {
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 3s ease-in-out;
+    font-style: normal;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .mystery-box {
+        font-size: 1.5rem;
+        padding: 15px 40px;
+    }
+
+    .love-text {
+        font-size: 2.5rem;
+    }
+
+    .love-letter {
+        font-size: 1rem;
+        padding: 15px;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mystery-box {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+
+    .love-text {
+        font-size: 2rem;
+    }
+
+    .love-letter {
+        font-size: 0.9rem;
+        padding: 12px;
+        max-width: 95%;
+    }
+}
